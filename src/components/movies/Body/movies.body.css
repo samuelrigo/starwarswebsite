@@ -1,0 +1,10 @@
+.body{
+    display: flex;
+    justify-content: center;
+}
+.star__video{
+    position: absolute;
+    max-width: 100%;
+    filter: opacity(25%);
+    z-index: -1;
+}
