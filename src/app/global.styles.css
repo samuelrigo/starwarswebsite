@@ -2,7 +2,12 @@
     --black-color: #000000;
     --white-color: white;
     --yellow-color: #e3cf1b;
-    --main-font: "Montserrat", sans-serif;
+    --main-font: "Poppins", "sans-serif"
+
+}
+
+* {
+    font-family: var(--main-font);
 }
 
 .main-container {
