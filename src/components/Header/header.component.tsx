@@ -10,7 +10,7 @@ export const Header = () => {
   };
 
   const hideNavbar = () => {
-    navRef.current.classList.remove("responsive__nav");
+    navRef.current.classList.remove("responsive_nav");
   };
 
   return (
