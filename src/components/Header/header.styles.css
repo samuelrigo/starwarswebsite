@@ -1,68 +1,102 @@
 .header {
-  background-color: var(--black-color);
+  display: flex;
+  justify-content: space-around;
 
-  border: 0.15em solid var(--yellow-color);
+  background: transparent;
 
   color: var(--white-color);
 }
 
-.header img {
-  width: 10em;
+.nav__btn {
+  border: none;
+  background: none;
 }
 
-.menu__icon * {
-  position: absolute;
-  left: 85%;
-  top: 3.5%;
-  color: var(--yellow-color) !important;
+.invisible__button {
+  visibility: hidden;
+}
+
+.header__logo {
+  padding: 1.5em 0;
 }
 
 .nav__menu {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  gap: 1.5em;
+
+  background-color: var(--black-color);
+
+  transition: 1s;
+  transform: translatey(-100vh);
+}
+
+.responsive__nav {
+  transform: none;
+}
+
+.nav__item {
+  display: flex;
+  align-items: center;
+
+  margin: 0 2rem;
+
+  color: var(--white-color);
   text-decoration: none;
+  font-size: 16px;
+}
+
+.nav__item img {
+  width: 20px;
+}
+
+.nav__item p {
+  padding: 0 0 0 1em;
+}
+
+.nav__close__btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
 }
 
 @media only screen and (min-width: 992px) {
   .header {
-    display: flex;
     justify-content: space-between;
   }
 
-  .header img {
-    padding-left: 5em;
+  .header__logo {
+    padding: 1.5em 5em;
   }
 
-  .menu__icon {
+  .nav__btn {
     display: none;
   }
 
   .nav__menu {
-    display: flex;
-    align-items: center;
     flex-direction: row;
 
-    list-style-type: none;
+    position: relative;
+    height: auto;
+    width: auto;
+
+    transform: none;
   }
 
-  .nav__item {
-    padding: 1em 5em;
-
-    color: var(--yellow-color);
-
-    font-family: var(--main-font);
-    font-weight: 500;
-    font-size: large;
+  .nav__btn {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    visibility: hidden;
+    opacity: 0;
   }
-
-  .nav__item:hover {
-    background: var(--yellow-color);
-    border: 0.1em solid var(--yellow-color);
-    border-radius: 0.5em;
-    color: var(--white-color);
-  }
-
-  a {
-    text-decoration: none;
-  }
-
 }
