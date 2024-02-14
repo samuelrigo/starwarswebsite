@@ -1,0 +1,107 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  position: fixed;
+
+  background: transparent;
+
+  color: var(--white-color);
+}
+
+.nav__btn {
+  border: none;
+  background: none;
+  padding: 0 0 0 1em;
+}
+
+.invisible__button {
+  visibility: hidden;
+}
+
+.header__logo {
+  padding: 1.5em 0;
+}
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  gap: 1.5em;
+
+  background-color: var(--black-color);
+
+  transition: 1s;
+  transform: translatey(-100vh);
+}
+
+.responsive__nav {
+  transform: none;
+}
+
+.nav__item {
+  display: flex;
+  align-items: center;
+
+  margin: 0 2rem;
+
+  color: var(--white-color);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav__item img {
+  width: 20px;
+}
+
+.nav__item p {
+  padding: 0 0 0 1em;
+}
+
+.nav__close__btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+@media only screen and (min-width: 992px) {
+  .header {
+    justify-content: space-between;
+  }
+
+  .header__logo {
+    padding: 1.5em 5em;
+  }
+
+  .nav__btn {
+    display: none;
+  }
+
+  .nav__menu {
+    flex-direction: row;
+
+    position: relative;
+    height: auto;
+    width: auto;
+
+    transform: none;
+    background: transparent;
+  }
+
+  .nav__btn {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
