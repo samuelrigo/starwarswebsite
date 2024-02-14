@@ -1,0 +1,41 @@
+.body {
+    display: flex;
+    flex-direction: column;
+
+    background-repeat: no-repeat;
+    background-image: url("E:\dev\starwarswebsite\public\images\darth-vader-wallpaper-mobile.svg");
+    background-size: 100%;
+
+    color: var(--white-color);
+
+}
+
+.body__text {
+    padding: 135% 1em 2em 1em;
+
+    text-align: left;
+}
+
+.body__title {
+    padding: 0 0 1em 0;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.body__p {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+@media only screen and (min-width: 992px) {
+    .body {
+        background-image: url("E:\dev\starwarswebsite\public\images\darth-vader-wallpaper.svg");
+        max-width: 100%;
+    }
+
+    .body__text {
+        padding: 55% 1em 30% 1em;
+
+        text-align: left;
+    }
+}

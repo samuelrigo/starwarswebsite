@@ -1,6 +1,9 @@
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 100%;
+
+  position: fixed;
 
   background: transparent;
 
@@ -10,6 +13,7 @@
 .nav__btn {
   border: none;
   background: none;
+  padding: 0 0 0 1em;
 }
 
 .invisible__button {
@@ -89,6 +93,7 @@
     width: auto;
 
     transform: none;
+    background: transparent;
   }
 
   .nav__btn {
