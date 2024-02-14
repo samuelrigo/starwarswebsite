@@ -1,0 +1,22 @@
+.characters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    padding-top: 1em;
+
+    color: var(--white-color);
+}
+
+.characters h1 {
+    padding-left: 1em;
+    font-size: 24px;
+}
+
+.characters__seeAll {
+    padding-right: 1em;
+    text-decoration: none;
+    color: var(--yellow-color);
+    font-size: 16px;
+}
