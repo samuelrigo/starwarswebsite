@@ -1,18 +1,20 @@
 .header {
-  background-color: black;
+  background-color: var(--black-color);
 
-  border: 0.15em solid #e3cf1b;
+  border: 0.15em solid var(--yellow-color);
 
-  color: white;
+  color: var(--white-color);
 }
+
 .header img {
   width: 10em;
 }
+
 .menu__icon * {
   position: absolute;
   left: 85%;
   top: 3.5%;
-  color: #e3cf1b !important;
+  color: var(--yellow-color) !important;
 }
 
 .nav__menu {
@@ -24,40 +26,42 @@
   .header {
     display: flex;
     justify-content: space-between;
-
-    background-color: black;
-    
-    border: 0.15em solid #e3cf1b;
-
-    color: white;
   }
+
   .header img {
-    width: 10em;
     padding-left: 5em;
   }
-  .menu__icon{
+
+  .menu__icon {
     display: none;
   }
+
   .nav__menu {
     display: flex;
     align-items: center;
     flex-direction: row;
-    
+
     list-style-type: none;
   }
+
   .nav__item {
-    padding: 1em 5em 1em 5em;
-    color: #e3cf1b;
-    font-family: "Montserrat", sans-serif;
+    padding: 1em 5em;
+
+    color: var(--yellow-color);
+
+    font-family: var(--main-font);
     font-weight: 500;
     font-size: large;
   }
-  .nav__item :hover{
-    background: #e3cf1b;
-    border: 1em solid #e3cf1b ;
+
+  .nav__item:hover {
+    background: var(--yellow-color);
+    border: 0.1em solid var(--yellow-color);
     border-radius: 0.5em;
+    color: var(--white-color);
   }
-  a{
+
+  a {
     text-decoration: none;
   }
 
