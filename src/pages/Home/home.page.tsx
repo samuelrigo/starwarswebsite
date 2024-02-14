@@ -1,14 +1,10 @@
-
-import Header from "../../components/Header"
-import HomeBody from "../../components/home/Body/home.body"
+import HomeBody from "../../components/home/body/body.component";
 
 export const Home = () => {
-    return(
-        <div>
-            <Header />
-            <HomeBody/>
-        </div>
-
-    )
-}
-export default Home
+  return (
+    <div>
+      <HomeBody />
+    </div>
+  );
+};
+export default Home;

@@ -1,12 +1,10 @@
-import Header from "../../components/Header"
-import MoviesBody from "../../components/movies/Body/movies.body"
+import MoviesBody from "../../components/movies/body/movies.component";
 
 export const Movies = () => {
-    return(
-        <div>
-            <Header />
-            <MoviesBody/>
-        </div>
-    )
-}
-export default Movies
+  return (
+    <div>
+      <MoviesBody />
+    </div>
+  );
+};
+export default Movies;
