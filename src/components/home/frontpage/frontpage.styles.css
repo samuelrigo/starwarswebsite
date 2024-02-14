@@ -3,7 +3,7 @@
     flex-direction: column;
 
     background-repeat: no-repeat;
-    background-image: url("/public/images/darth-vader-wallpaper-mobile.svg");
+    background-image: url("E:\dev\starwarswebsite\public\images\darth-vader-wallpaper-mobile.svg");
     background-size: 100%;
 
     color: var(--white-color);
@@ -29,7 +29,7 @@
 
 @media only screen and (min-width: 992px) {
     .body {
-        background-image: url("/public/images/darth-vader-wallpaper.svg");
+        background-image: url("E:\dev\starwarswebsite\public\images\darth-vader-wallpaper.svg");
         max-width: 100%;
     }
 
