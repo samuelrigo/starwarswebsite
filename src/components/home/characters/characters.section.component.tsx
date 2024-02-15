@@ -6,7 +6,6 @@ export const CharactersSection = () => {
     <div className="characters">
       <h1> Characters </h1>
       <Link to="/characters" className="characters__seeAll">
-        {" "}
         See All
       </Link>
     </div>
