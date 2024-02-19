@@ -4,7 +4,7 @@ import axios from "axios";
 type Character = {
   name: string;
   films: string[];
-  species: string;
+  species: string[];
   mass: string;
   height: string;
   birth_year: string;
@@ -14,64 +14,82 @@ type Character = {
 export default function useCharacters() {
   const [characters, setCharacters] = useState<Character[]>([]);
 
-  const fetchStarWarsCharacters = useCallback(async () => {
-    for (let index = 1; index <= 9; index++) {
-      await axios
-        .get(`https://swapi.dev/api/people/?page=${index}`)
-        .then((res) => setCharacters(res.data.results))
-        .catch((err) => {
-          setError(err.message);
-        });
+  const fetchFilmData = useCallback(async (filmLinks: string[]) => {
+    try {
+      const filmsData = await Promise.all(
+        filmLinks.map(async (link) => {
+          const response = await axios.get(link);
+          return response.data.title;
+        })
+      );
+
+      return filmsData;
+    } catch (error) {
+      console.error("Erro ao buscar dados dos filmes:", error);
+      throw error;
     }
   }, []);
 
-  const fetchCharMovies = useCallback(() => {
-    const fetchFilmData = async () => {
-      try {
-        const updatedCharacters = await Promise.all(
-          characters.map(async (character) => {
-            if (character.films) {
-              const filmDataPromises = character.films.map(async (filmUrl) => {
-                const response = await axios.get(filmUrl);
-                return response.data.title;
-              });
+  const fetchSpeciesData = useCallback(async (speciesLinks: string[]) => {
+    try {
+      const speciesData = await Promise.all(
+        speciesLinks.map(async (link) => {
+          const response = await axios.get(link);
+          return response.data.name;
+        })
+      );
 
-              const filmData = await Promise.all(filmDataPromises);
+      return speciesData.length > 0 ? speciesData : ["Human"];
+    } catch (error) {
+      console.error("Erro ao buscar dados das espécies:", error);
+      throw error;
+    }
+  }, []);
 
-              return {
-                ...character,
-                films: filmData,
-              };
-            }
+  const fetchHomeWorldData = useCallback(async (HomeWorldLinks: string) => {
+    try {
+      const response = await axios.get(HomeWorldLinks);
+      return response.data.name;
+    } catch (error) {
+      console.error("Erro ao buscar dados dos planetas:", error);
+      throw error;
+    }
+  }, []);
 
-            return character;
-          })
+  const fetchStarWarsCharacters = useCallback(async () => {
+    try {
+      const charactersData = [];
+
+      for (let index = 1; index <= 9; index++) {
+        const response = await axios.get(
+          `https://swapi.dev/api/people/?page=${index}`
         );
-
-        setCharacters(updatedCharacters);
-      } catch (error) {
-        console.error(
-          "Ocorreu um erro ao buscar informações dos filmes:",
-          error
-        );
+        charactersData.push(...response.data.results);
       }
-    };
 
-    fetchFilmData();
-  }, [characters]);
+      for (const character of charactersData) {
+        const filmsData = await fetchFilmData(character.films);
+        const speciesData = await fetchSpeciesData(character.species);
+        const homeWorldData = await fetchHomeWorldData(character.homeworld);
+
+        character.films = filmsData;
+        character.species = speciesData;
+        character.homeworld = homeWorldData;
+      }
+
+      setCharacters(charactersData);
+    } catch (error) {
+      console.error("Erro ao buscar dados:", error);
+    }
+  }, [fetchFilmData, fetchSpeciesData, fetchHomeWorldData]);
 
   useEffect(() => {
     const controller = new AbortController();
 
     fetchStarWarsCharacters();
-    fetchCharMovies();
 
     return () => controller.abort();
-  }, [fetchStarWarsCharacters, fetchCharMovies]);
-
-  function setError(message: any) {
-    throw new Error("Couldn't fetch data");
-  }
+  }, [fetchStarWarsCharacters]);
 
   const hasCharacters = characters.length > 0;
 
