@@ -2,8 +2,9 @@ import { useCallback, useEffect, useState } from "react";
 
 type Movie = {
   title: string;
-  episode_id: number;
-  opening_crawl: string;
+  director: string;
+  release_date: string;
+  characters: object;
 };
 
 export default function useMovies() {
