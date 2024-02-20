@@ -1,34 +1,40 @@
 import { useCallback, useEffect, useState } from "react";
 
 type Movie = {
-  title: string;
-  director: string;
-  release_date: string;
-  characters: object;
+	title: string;
+	director: string;
+	release_date: string;
+	characters: object;
 };
 
 export default function useMovies() {
-  const [movies, setMovies] = useState<Movie[]>([]);
+	const [movies, setMovies] = useState<Movie[]>([]);
 
-  const fetchStarWarsMovies = useCallback(async () => {
-    fetch("https://swapi.dev/api/films").then(async (response) => {
-      const { results } = await response.json();
-      setMovies(results);
-    });
-  }, []);
+	const fetchStarWarsMovies = useCallback(async () => {
+		fetch("https://swapi.dev/api/films").then(async (response) => {
+			const { results } = await response.json();
 
-  useEffect(() => {
-    const controller = new AbortController();
+			const moviesWithYearOnly = results.map((movie: Movie) => ({
+				...movie,
+				release_date: movie.release_date.split("-")[0],
+			}));
 
-    fetchStarWarsMovies();
+			setMovies(moviesWithYearOnly);
+		});
+	}, []);
 
-    return () => controller.abort();
-  }, [fetchStarWarsMovies]);
+	useEffect(() => {
+		const controller = new AbortController();
 
-  const hasMovies = movies.length > 0;
+		fetchStarWarsMovies();
 
-  return {
-    movies,
-    hasMovies,
-  };
+		return () => controller.abort();
+	}, [fetchStarWarsMovies]);
+
+	const hasMovies = movies.length > 0;
+
+	return {
+		movies,
+		hasMovies,
+	};
 }

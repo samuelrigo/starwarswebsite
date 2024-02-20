@@ -24,3 +24,21 @@
     color: var(--yellow-color);
     font-size: 16px;
 }
+
+.card__list {
+    padding: 0;
+}
+
+.card {
+    padding: 1em;
+    margin: 0.5em;
+    border: solid 2px #1a1a1a;
+    border-radius: 1em;
+
+    background-color: #1a1a1a;
+}
+
+.card__info {
+    list-style-type: none;
+    padding: 0;
+}

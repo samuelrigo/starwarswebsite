@@ -1,4 +1,4 @@
-.movies {
+.characters__page {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -9,25 +9,27 @@
     color: var(--white-color);
 }
 
-.movies__page__nav {
+.characters__page__nav {
     display: flex;
-    align-items: center;
     justify-content: center;
-
     padding: 2em;
 }
 
-.movies h1 {
+.characters h1 {
     font-size: 24px;
 }
 
-.movies__seeAll {
+.characters__seeAll {
     text-decoration: none;
     color: var(--yellow-color);
     font-size: 16px;
 }
 
-.movie__card {
+.card__list {
+    padding: 0;
+}
+
+.card {
     padding: 1em;
     margin: 0.5em;
     border: solid 2px #1a1a1a;
@@ -36,6 +38,7 @@
     background-color: #1a1a1a;
 }
 
-.movie__list {
+.card__info {
+    list-style-type: none;
     padding: 0;
 }

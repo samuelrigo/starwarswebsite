@@ -4,7 +4,7 @@
     flex-direction: column;
 
 
-    padding-top: 1em;
+    padding: 1em;
 
     color: var(--white-color);
 }
@@ -12,6 +12,7 @@
 .movies__nav {
     display: flex;
     justify-content: space-between;
+
     padding: 2em;
 }
 
@@ -23,4 +24,17 @@
     text-decoration: none;
     color: var(--yellow-color);
     font-size: 16px;
+}
+
+.movie__card {
+    padding: 1em;
+    margin: 0.5em;
+    border: solid 2px #1a1a1a;
+    border-radius: 1em;
+
+    background-color: #1a1a1a;
+}
+
+.movie__list {
+    padding: 0;
 }
