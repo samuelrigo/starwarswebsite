@@ -20,12 +20,10 @@ export const MoviesBody = () => {
 
       <ul>
         {hasMovies &&
-          movies.map(({ title, episode_id, opening_crawl }) => {
+          movies.map(({ title }) => {
             return (
               <li key={title}>
                 <strong>{title}</strong>
-                <p>{episode_id}</p>
-                <p>{opening_crawl}</p>
                 <button>Characters</button>
                 <button>Planets</button>
               </li>
