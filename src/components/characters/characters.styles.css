@@ -40,7 +40,6 @@
 .card {
     margin: 0.5em;
     border-radius: 1em;
-
 }
 
 .card__luke__img {
@@ -49,12 +48,53 @@
 
 .card__info__luke {
     list-style-type: none;
-    padding: 0 15em 0 1em;
+    padding: 0 11em 0 1em;
 
     position: absolute;
-    top: 112.5%;
+    top: 115.5%;
+}
+
+.card h1 {
+    font-size: 24px;
+    padding: 0.5em 0;
 }
 
 .card__info__luke p {
     padding: 0.5em 0;
+}
+
+.card__darth__img {
+    width: 100%;
+}
+
+.card__info__darth {
+    list-style-type: none;
+    padding: 0 12.5em 0 1em;
+
+    position: absolute;
+    top: 181.5%;
+}
+
+.card__anakin__img {
+    width: 100%;
+}
+
+.card__info__anakin {
+    list-style-type: none;
+    padding: 0 10em 0 1em;
+
+    position: absolute;
+    top: 197.5%;
+}
+
+.card__yoda__img {
+    width: 100%;
+}
+
+.card__info__yoda {
+    list-style-type: none;
+    padding: 0 10em 0 1em;
+
+    position: absolute;
+    top: 212.5%;
 }

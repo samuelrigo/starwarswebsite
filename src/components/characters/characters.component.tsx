@@ -43,9 +43,9 @@ export const CharactersPage = (props: any) => {
                       className="card__luke__img"
                     />
                     <div className="card__info__luke " key={name + Math.random}>
-                      <p>
+                      <h1>
                         <strong> {name}</strong>
-                      </p>
+                      </h1>
                       <p>Movies:</p>
                       <strong> {films.join(", ")}</strong>
 
@@ -64,45 +64,53 @@ export const CharactersPage = (props: any) => {
                       <p>Homeworld:</p>
                       <strong> {homeworld}</strong>
                     </div>
-                    <div className="card__blankspace"></div>
                   </div>
                 );
               case "Darth Vader":
                 return (
                   <div className="card">
-                    <div
-                      className="card__info card__darth"
-                      key={name + Math.random}
-                    >
-                      <p>
+                    <img
+                      src="./././images/darth_charcard_mobile.png"
+                      alt="Darth Vader"
+                      className="card__darth__img"
+                    />
+                    <div className="card__info__darth" key={name + Math.random}>
+                      <h1>
                         <strong> {name}</strong>
-                      </p>
+                      </h1>
                     </div>
                   </div>
                 );
               case "Yoda":
                 return (
                   <div className="card">
-                    <div
-                      className="card__info card__yoda"
-                      key={name + Math.random}
-                    >
-                      <p>
+                    <img
+                      src="./././images/yoda_charcard_mobile.png"
+                      alt="Yoda"
+                      className="card__yoda__img"
+                    />
+                    <div className="card__info__yoda" key={name + Math.random}>
+                      <h1>
                         <strong> {name}</strong>
-                      </p>
+                      </h1>
                     </div>
                   </div>
                 );
               case "Anakin Skywalker":
                 return (
                   <div className="card">
+                    <img
+                      src="./././images/anakin_charcard_mobile.png"
+                      alt="Anakin Skywalker"
+                      className="card__anakin__img"
+                    />
                     <div
-                      className="card__info card__anakin"
+                      className="card__info__anakin"
                       key={name + Math.random}
                     >
-                      <p>
+                      <h1>
                         <strong> {name}</strong>
-                      </p>
+                      </h1>
                     </div>
                   </div>
                 );
