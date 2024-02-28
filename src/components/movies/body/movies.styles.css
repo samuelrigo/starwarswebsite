@@ -9,6 +9,13 @@
     color: var(--white-color);
 }
 
+.movies__nav__seeAll {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 2em;
+}
+
 .movies__page__nav {
     display: flex;
     align-items: center;
