@@ -24,52 +24,50 @@ export const CharactersPage = (props: any) => {
 
       <ul className="card__list">
         {hasCharacters &&
-          characters.map(
-            // eslint-disable-next-line array-callback-return
-            ({ name, films, species, mass, height, birth_year, homeworld }) => {
-              if (name === "Luke Skywalker") {
+          characters.map(function ({
+            name,
+            films,
+            species,
+            mass,
+            height,
+            birth_year,
+            homeworld,
+          }) {
+            switch (name) {
+              case "Luke Skywalker":
                 return (
-                  <div className="card">
-                    <div
-                      className="card__info card__luke"
-                      key={name + Math.random}
-                    >
-                      <img
-                        src="./././images/luke_charcard_mobile.png"
-                        alt="Luke card"
-                        className="card__luke__img"
-                      ></img>
+                  <div className="card ">
+                    <img
+                      src="./././images/luke_charcard_mobile.png"
+                      alt="Luke Skywalker"
+                      className="card__luke__img"
+                    />
+                    <div className="card__info__luke " key={name + Math.random}>
                       <p>
                         <strong> {name}</strong>
                       </p>
-                      <p>
-                        Films:
-                        <strong> {films.join(", ")}</strong>
-                      </p>
-                      <p>
-                        Species:
-                        <strong> {species}</strong>
-                      </p>
-                      <p>
-                        Mass:
-                        <strong> {mass}</strong>
-                      </p>
-                      <p>
-                        Height:
-                        <strong> {height}</strong>
-                      </p>
-                      <p>
-                        Birth Year:
-                        <strong> {birth_year}</strong>
-                      </p>
-                      <p>
-                        Homeworld:
-                        <strong> {homeworld}</strong>
-                      </p>
+                      <p>Movies:</p>
+                      <strong> {films.join(", ")}</strong>
+
+                      <p>Species:</p>
+                      <strong>{species}</strong>
+
+                      <p>Mass:</p>
+                      <strong> {mass} Kg</strong>
+
+                      <p>Height:</p>
+                      <strong> {height} m</strong>
+
+                      <p>Birth Year: </p>
+                      <strong> {birth_year}</strong>
+
+                      <p>Homeworld:</p>
+                      <strong> {homeworld}</strong>
                     </div>
+                    <div className="card__blankspace"></div>
                   </div>
                 );
-              } else if (name === "Darth Vader") {
+              case "Darth Vader":
                 return (
                   <div className="card">
                     <div
@@ -82,7 +80,7 @@ export const CharactersPage = (props: any) => {
                     </div>
                   </div>
                 );
-              } else if (name === "Yoda") {
+              case "Yoda":
                 return (
                   <div className="card">
                     <div
@@ -95,7 +93,7 @@ export const CharactersPage = (props: any) => {
                     </div>
                   </div>
                 );
-              } else if (name === "Anakin Skywalker") {
+              case "Anakin Skywalker":
                 return (
                   <div className="card">
                     <div
@@ -108,9 +106,10 @@ export const CharactersPage = (props: any) => {
                     </div>
                   </div>
                 );
-              }
+              default:
+                return null;
             }
-          )}
+          })}
       </ul>
     </div>
   );
