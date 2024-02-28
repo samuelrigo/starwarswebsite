@@ -35,14 +35,20 @@
 }
 
 .movie__card {
+    display: flex;
+
     padding: 1em;
     margin: 0.5em;
-    border: solid 2px #1a1a1a;
-    border-radius: 1em;
+
+    border-radius: 8px;
 
     background-color: #1a1a1a;
 }
 
 .movie__list {
     padding: 0;
+}
+
+.movie__info {
+    padding: 0 0 0 1em
 }
