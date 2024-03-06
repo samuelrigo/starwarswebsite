@@ -35,26 +35,38 @@
 
 .card__list {
     padding: 0;
+
 }
+
 
 .card {
     margin: 0.5em;
     border-radius: 1em;
 }
 
+
+
+/* Luke card */
+.card__luke {
+    position: relative;
+    max-width: 100%;
+}
+
 .card__luke__img {
     width: 100%;
+    height: auto;
+    display: block;
+
 }
 
 .card__info__luke {
     list-style-type: none;
-    padding: 0 11em 0 1em;
-
+    padding: 1em 11em 0 1em;
     position: absolute;
-    top: 115.5%;
+    top: 0%;
 }
 
-.card h1 {
+.card__luke h1 {
     font-size: 24px;
     padding: 0.5em 0;
 }
@@ -63,20 +75,47 @@
     padding: 0.5em 0;
 }
 
+/* Darth card */
+.card__darth {
+    padding: 1em 0;
+
+    position: relative;
+    max-width: 100%;
+
+}
+
 .card__darth__img {
     width: 100%;
+    height: auto;
+    display: block;
 }
+
+
 
 .card__info__darth {
     list-style-type: none;
+
     padding: 0 12.5em 0 1em;
 
     position: absolute;
-    top: 181.5%;
+    top: 42.5%;
+}
+
+.card__darth h1 {
+    font-size: 24px;
+}
+
+/* Anakin card */
+.card__anakin {
+    position: relative;
+    max-width: 100%;
+    padding: 0 0 1em 0;
 }
 
 .card__anakin__img {
     width: 100%;
+    height: 146px;
+    display: block;
 }
 
 .card__info__anakin {
@@ -84,11 +123,25 @@
     padding: 0 10em 0 1em;
 
     position: absolute;
-    top: 197.5%;
+    top: 35%;
+}
+
+.card__anakin h1 {
+    font-size: 24px;
+}
+
+/* Yoda card */
+
+.card__yoda {
+    position: relative;
+    max-width: 100%;
+    padding: 0 0 1em 0;
 }
 
 .card__yoda__img {
     width: 100%;
+    height: 146px;
+    display: block;
 }
 
 .card__info__yoda {
@@ -96,5 +149,73 @@
     padding: 0 10em 0 1em;
 
     position: absolute;
-    top: 212.5%;
+    top: 35%;
+}
+
+.card__yoda h1 {
+    font-size: 24px;
+
+}
+
+/* Media queries */
+
+
+@media only screen and (min-width: 992px) {
+
+    .characters__page {
+        padding: 0 0 0 5em;
+    }
+
+    .card__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .card__luke {
+        grid-area: 1 / 1 / 4 / 3
+    }
+
+    .card__darth {
+        grid-area: 1 / 3 / 2 / 5;
+    }
+
+    .card__anakin {
+        grid-area: 2 / 3 / 3 / 5;
+    }
+
+    .card__yoda {
+        grid-area: 3 / 3 / 4 / 5;
+    }
+
+    .card__luke__img {
+        height: 80%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .card__luke__img,
+    .card__darth__img,
+    .card__anakin__img,
+    .card__yoda__img {
+        width: 85%;
+    }
+
+
+    .card__info__luke {
+        position: absolute;
+        top: 115.5%;
+        padding: 0 60em 0 1em;
+    }
+
+
+
+
+    .card__info__darth,
+    .card__info__anakin,
+    .card__info__yoda {
+        position: static
+    }
 }

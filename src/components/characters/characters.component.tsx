@@ -36,7 +36,10 @@ export const CharactersPage = (props: any) => {
             switch (name) {
               case "Luke Skywalker":
                 return (
-                  <div className="card ">
+                  <div
+                    className="
+                   card__luke"
+                  >
                     <img
                       src="./././images/luke_charcard_mobile.png"
                       alt="Luke Skywalker"
@@ -68,7 +71,7 @@ export const CharactersPage = (props: any) => {
                 );
               case "Darth Vader":
                 return (
-                  <div className="card">
+                  <div className="card__darth">
                     <img
                       src="./././images/darth_charcard_mobile.png"
                       alt="Darth Vader"
@@ -83,7 +86,7 @@ export const CharactersPage = (props: any) => {
                 );
               case "Yoda":
                 return (
-                  <div className="card">
+                  <div className=" card__yoda">
                     <img
                       src="./././images/yoda_charcard_mobile.png"
                       alt="Yoda"
@@ -98,7 +101,7 @@ export const CharactersPage = (props: any) => {
                 );
               case "Anakin Skywalker":
                 return (
-                  <div className="card">
+                  <div className="card__anakin">
                     <img
                       src="./././images/anakin_charcard_mobile.png"
                       alt="Anakin Skywalker"
