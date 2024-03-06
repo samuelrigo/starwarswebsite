@@ -4,7 +4,7 @@
     flex-direction: column;
 
 
-    padding: 10em 0;
+    padding: 1em 0;
 
     color: var(--white-color);
 }
@@ -13,7 +13,7 @@
     display: flex;
     justify-content: space-between;
 
-    padding: 2em;
+    padding: 2em 2.5em;
 }
 
 .movies__page__nav {
@@ -45,10 +45,11 @@
     background-color: #1a1a1a;
 }
 
-.movie__list {
-    padding: 0;
-}
 
 .movie__info {
-    padding: 0 0 0 1em
+    padding: 0 0 0 1em;
+}
+
+.movie__list {
+    padding: 0 0 0 0;
 }
