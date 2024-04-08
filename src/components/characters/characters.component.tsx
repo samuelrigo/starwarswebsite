@@ -7,7 +7,7 @@ export const CharactersPage = (props: any) => {
 
   return (
     <div className="characters__page">
-      {props.seeAll !== undefined ? (
+      {props.seeAll ? (
         <div className="characters__page__nav__seeAll">
           <h1 className="characters__title"> Characters </h1>
           <div className="seeAll">
@@ -21,7 +21,7 @@ export const CharactersPage = (props: any) => {
           <h1 className="characters__title"> Characters </h1>
         </div>
       )}
-
+    {props.seeAll ? (
       <ul className="card__list">
         {hasCharacters &&
           characters.map(function ({
@@ -122,6 +122,22 @@ export const CharactersPage = (props: any) => {
             }
           })}
       </ul>
+      ):(
+        <ul className="card__list">
+        {hasCharacters &&
+          characters.map(function ({
+            name,
+          }) {
+            return (
+              <div className="card" key={name + Math.random}>
+                <h1 className="card__characters__title">
+                  <strong> {name}</strong>
+                </h1>
+              </div>
+            );
+          })}
+          </ul>
+      )};
     </div>
   );
 };

@@ -1,10 +1,13 @@
+/* Character title independent of having see all */
+.characters__title {
+    font-size: 24px;
+}
+
+/* Characters title with see all */
 .characters__page {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-
-
-    padding: 10em 0;
 
     color: var(--white-color);
 }
@@ -12,19 +15,10 @@
 .characters__page__nav__seeAll {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     padding: 2em;
 
-}
-
-.characters__page__nav {
-    display: flex;
-    justify-content: center;
-    padding: 2em;
-}
-
-.characters__title {
-    font-size: 24px;
 }
 
 .characters__seeAll {
@@ -33,18 +27,22 @@
     font-size: 16px;
 }
 
-.card__list {
-    padding: 0;
-
+/* Characters title without see all*/
+.characters__page__nav {
+    display: flex;
+    justify-content: center;
+    padding: 7.5em 0 1em 0;
 }
 
+/* Card list with Firstfive props that gives only first five chars */
+.card__list {
+    padding: 0 0.5em;
+}
 
 .card {
     margin: 0.5em;
     border-radius: 1em;
 }
-
-
 
 /* Luke card */
 .card__luke {
@@ -54,14 +52,15 @@
 
 .card__luke__img {
     width: 100%;
-    height: auto;
+    height: 490px;
     display: block;
-
 }
 
 .card__info__luke {
     list-style-type: none;
-    padding: 1em 11em 0 1em;
+
+    padding: 0 6em 0 1em;
+
     position: absolute;
     top: 0%;
 }
@@ -72,6 +71,7 @@
 }
 
 .card__info__luke p {
+    font-size: 14px;
     padding: 0.5em 0;
 }
 
@@ -90,12 +90,10 @@
     display: block;
 }
 
-
-
 .card__info__darth {
     list-style-type: none;
 
-    padding: 0 12.5em 0 1em;
+    padding: 0 1em;
 
     position: absolute;
     top: 42.5%;
@@ -131,7 +129,6 @@
 }
 
 /* Yoda card */
-
 .card__yoda {
     position: relative;
     max-width: 100%;
@@ -154,11 +151,29 @@
 
 .card__yoda h1 {
     font-size: 24px;
-
 }
+
+/* Card list with Firstfive props that gives only first five chars */
+.card__characters__title {
+    display: flex;
+    align-items: center;
+
+    font-size: 24px;
+
+    padding: 1em;
+    border-radius: 8px;
+
+    background-color: var(--gray-color);
+}
+
 
 /* Media queries */
 
+@media only screen and (min-width: 640px) {
+    .card__darth__img {
+        height: 146px;
+    }
+}
 
 @media only screen and (min-width: 992px) {
 
@@ -201,21 +216,15 @@
     .card__anakin__img,
     .card__yoda__img {
         width: 85%;
+        max-width: 100%;
     }
-
-
-    .card__info__luke {
-        position: absolute;
-        top: 115.5%;
-        padding: 0 60em 0 1em;
-    }
-
-
-
 
     .card__info__darth,
     .card__info__anakin,
-    .card__info__yoda {
-        position: static
+    .card__info__yoda,
+    .card__info__luke {
+        position: absolute;
+        top: 0%;
+        padding: 0 60em 0 1em;
     }
 }

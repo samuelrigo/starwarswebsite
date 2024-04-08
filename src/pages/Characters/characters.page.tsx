@@ -3,7 +3,7 @@ import CharactersPage from "../../components/characters/characters.component";
 export const Characters = () => {
 	return (
 		<div>
-			<CharactersPage />
+			<CharactersPage/>
 		</div>
 	);
 };
