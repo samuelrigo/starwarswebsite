@@ -7,7 +7,7 @@ export const MoviesPage = (props: any) => {
   const firstThreeMovies = movies.slice(0, 3);
   return (
     <div className="movies">
-      {props.seeAll !== undefined ? (
+      {props.seeAll ? (
         <div className="movies__nav__seeAll">
           <h1> Movies </h1>
           <Link to="/movies" className="movies__seeAll">
@@ -19,7 +19,7 @@ export const MoviesPage = (props: any) => {
           <h1> Movies </h1>
         </div>
       )}
-
+      {props.seeAll ? (
       <ul className="movie__list">
         {hasMovies &&
           firstThreeMovies.map(
@@ -79,6 +79,26 @@ export const MoviesPage = (props: any) => {
             }
           )}
       </ul>
+      ) : (
+        <ul className="movie__list">
+        {hasMovies &&
+          movies.map(
+            ({ title, director, release_date }) => {
+              return (
+                <div className="movie__card" key={title}>
+                
+                  <div className="movie__info">
+                    <h1>{title}</h1>
+                    <p>
+                      {director} - {release_date}
+                    </p>
+                  </div>
+                </div>
+              );
+            }
+          )}
+      </ul>
+      )}
     </div>
   );
 };
