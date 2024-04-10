@@ -27,6 +27,12 @@
     font-size: 16px;
 }
 
+@media only screen and (min-width: 640px) {
+    .body__text {
+        padding: 112.5% 1em 2em 1em;
+    }
+}
+
 @media only screen and (min-width: 992px) {
     .body {
         background-image: url("/public/images/darth-vader-wallpaper.svg");

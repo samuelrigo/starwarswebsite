@@ -50,10 +50,24 @@
     max-width: 100%;
 }
 
-.card__luke__img {
+.card__luke__img__mobile {
     width: 100%;
     height: 490px;
     display: block;
+}
+
+.card__luke__img__tablet,
+.card__darth__img__tablet,
+.card__anakin__img__tablet,
+.card__yoda__img__tablet {
+    display: none;
+}
+
+.card__luke__img__desktop,
+.card__darth__img__desktop,
+.card__anakin__img__desktop,
+.card__yoda__img__desktop {
+    display: none;
 }
 
 .card__info__luke {
@@ -84,7 +98,7 @@
 
 }
 
-.card__darth__img {
+.card__darth__img__mobile {
     width: 100%;
     height: auto;
     display: block;
@@ -92,11 +106,10 @@
 
 .card__info__darth {
     list-style-type: none;
-
-    padding: 0 1em;
+    padding: 0 2.5em 0 1em;
 
     position: absolute;
-    top: 42.5%;
+    top: 35%;
 }
 
 .card__darth h1 {
@@ -110,18 +123,18 @@
     padding: 0 0 1em 0;
 }
 
-.card__anakin__img {
+.card__anakin__img__mobile {
     width: 100%;
-    height: 146px;
+    height: auto;
     display: block;
 }
 
 .card__info__anakin {
     list-style-type: none;
-    padding: 0 10em 0 1em;
+    padding: 0 2.5em 0 1em;
 
     position: absolute;
-    top: 35%;
+    top: 27.5%;
 }
 
 .card__anakin h1 {
@@ -135,9 +148,9 @@
     padding: 0 0 1em 0;
 }
 
-.card__yoda__img {
+.card__yoda__img__mobile {
     width: 100%;
-    height: 146px;
+    height: auto;
     display: block;
 }
 
@@ -146,7 +159,7 @@
     padding: 0 10em 0 1em;
 
     position: absolute;
-    top: 35%;
+    top: 27.5%;
 }
 
 .card__yoda h1 {
@@ -157,8 +170,7 @@
 .card__characters__title {
     display: flex;
     align-items: center;
-
-    font-size: 24px;
+    justify-content: space-between;
 
     padding: 1em;
     border-radius: 8px;
@@ -166,12 +178,118 @@
     background-color: var(--gray-color);
 }
 
+.card__characters__title h1 {
+    font-size: 24px;
+}
+
+.card__character__button {
+    display: none;
+}
 
 /* Media queries */
 
 @media only screen and (min-width: 640px) {
+
+    .card__luke__img__mobile,
+    .card__darth__img__mobile,
+    .card__anakin__img__mobile,
+    .card__yoda__img__mobile {
+        display: none;
+    }
+
+    .card__luke__img__tablet,
+    .card__darth__img__tablet,
+    .card__anakin__img__tablet,
+    .card__yoda__img__tablet {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .card__luke__img__desktop,
+    .card__darth__img__desktop,
+    .card__anakin__img__desktop,
+    .card__yoda__img__desktop {
+        display: none;
+    }
+
+    .card__info__luke {
+        display: flex;
+        flex-direction: column;
+        padding: 0 10em 0 0;
+    }
+
+    .card__info__title__luke {
+        padding: 0 0.75em;
+    }
+
+    .card__info__movies__luke {
+        padding: 0 0.75em;
+    }
+
+    .card__info__details__luke {
+        display: flex;
+        flex-direction: row;
+
+        padding: 0.75em 0;
+    }
+
+    .card__info__secundary__luke {
+        display: flex;
+        flex-direction: column;
+
+        padding: 0 0.75em;
+    }
+
+
+
     .card__darth__img {
         height: 146px;
+    }
+
+
+    .card__char__info {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1em;
+    }
+
+    .card__character__button {
+        display: block;
+        border: none;
+        background: none;
+    }
+
+    .hide__button {
+        display: none;
+    }
+
+    .hidden__char__info {
+        display: flex;
+
+        padding: 0 1em;
+
+        border-radius: 8px;
+
+        background-color: var(--gray-color);
+    }
+
+    .shown__char__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card__info__movies {
+        padding: 1em 0 0 0;
+    }
+
+    .card__info__details {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .card__info__secundary {
+        padding: 1em 2.5em 1em 0;
     }
 }
 
@@ -191,6 +309,27 @@
 
     .card__luke {
         grid-area: 1 / 1 / 4 / 3
+    }
+
+    .card__luke__img__mobile,
+    .card__darth__img__mobile,
+    .card__anakin__img__mobile,
+    .card__yoda__img__mobile {
+        display: none;
+    }
+
+    .card__luke__img__tablet,
+    .card__darth__img__tablet,
+    .card__anakin__img__tablet,
+    .card__yoda__img__tablet {
+        display: none;
+    }
+
+    .card__luke__img__desktop,
+    .card__darth__img__desktop,
+    .card__anakin__img__desktop,
+    .card__yoda__img__desktop {
+        display: block;
     }
 
     .card__darth {
