@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
 import "./characters.styles.css";
 import useCharacters from "./use-characters.hook";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 export const CharactersPage = (props: any) => {
   const { characters, hasCharacters } = useCharacters();
-  const charRef = useRef<any>();
   const [visibleChar, setVisibleChar] = useState<string | null>(null);
 
   const showCharInfo = (name: string) => {
@@ -105,95 +104,109 @@ export const CharactersPage = (props: any) => {
                       </div>
                     </div>
                   );
-                case "Darth Vader":
-                  return (
-                    <div className="card__darth">
-                      <img
-                        src="./././images/mobile/darth_charcard_mobile.png"
-                        alt="Darth Vader"
-                        className="card__darth__img__mobile"
-                      />
-                      <img
-                        src="./././images/tablet/darth_charcard_tablet.png"
-                        alt="Darth Vader"
-                        className="card__darth__img__tablet"
-                      />
-                      <img
-                        src="./././images/desktop/darth_charcard_desktop.png"
-                        alt="Darth Vader"
-                        className="card__darth__img__desktop"
-                      />
-                      <div
-                        className="card__info__darth"
-                        key={name + Math.random}
-                      >
-                        <h1>
-                          <strong> {name}</strong>
-                        </h1>
-                      </div>
-                    </div>
-                  );
-                case "Yoda":
-                  return (
-                    <div className=" card__yoda">
-                      <img
-                        src="./././images/mobile/yoda_charcard_mobile.png"
-                        alt="Yoda"
-                        className="card__yoda__img__mobile"
-                      />
-                      <img
-                        src="./././images/tablet/yoda_charcard_tablet.png"
-                        alt="Yoda"
-                        className="card__yoda__img__tablet"
-                      />
-                      <img
-                        src="./././images/desktop/yoda_charcard_desktop.png"
-                        alt="Yoda"
-                        className="card__yoda__img__desktop"
-                      />
-                      <div
-                        className="card__info__yoda"
-                        key={name + Math.random}
-                      >
-                        <h1>
-                          <strong> {name}</strong>
-                        </h1>
-                      </div>
-                    </div>
-                  );
-                case "Anakin Skywalker":
-                  return (
-                    <div className="card__anakin">
-                      <img
-                        src="./././images/mobile/anakin_charcard_mobile.png"
-                        alt="Anakin Skywalker"
-                        className="card__anakin__img__mobile"
-                      />
-                      <img
-                        src="./././images/tablet/anakin_charcard_tablet.png"
-                        alt="Anakin Skywalker"
-                        className="card__anakin__img__tablet"
-                      />
-                      <img
-                        src="./././images/desktop/anakin_charcard_desktop.png"
-                        alt="Anakin Skywalker"
-                        className="card__anakin__img__desktop"
-                      />
 
-                      <div
-                        className="card__info__anakin"
-                        key={name + Math.random}
-                      >
-                        <h1>
-                          <strong> {name}</strong>
-                        </h1>
-                      </div>
-                    </div>
-                  );
                 default:
                   return null;
               }
             })}
+          {hasCharacters && (
+            <div className="card__group">
+              {characters
+                .filter(({ name }) =>
+                  ["Darth Vader", "Yoda", "Anakin Skywalker"].includes(name)
+                )
+                .map(function ({ name }) {
+                  return (
+                    <li key={name + Math.random()}>
+                      {name === "Darth Vader" && (
+                        <div className="card__darth">
+                          <img
+                            src="./././images/mobile/darth_charcard_mobile.png"
+                            alt="Darth Vader"
+                            className="card__darth__img__mobile"
+                          />
+                          <img
+                            src="./././images/tablet/darth_charcard_tablet.png"
+                            alt="Darth Vader"
+                            className="card__darth__img__tablet"
+                          />
+                          <img
+                            src="./././images/desktop/darth_charcard_desktop.png"
+                            alt="Darth Vader"
+                            className="card__darth__img__desktop"
+                          />
+                          <div
+                            className="card__info__darth"
+                            key={name + Math.random}
+                          >
+                            <h1>
+                              <strong> {name}</strong>
+                            </h1>
+                          </div>
+                        </div>
+                      )}
+                      {name === "Yoda" && (
+                        <div className="card__minor card__yoda ">
+                          <div className="card__minor card__yoda ">
+                            <img
+                              src="./././images/mobile/yoda_charcard_mobile.png"
+                              alt="Yoda"
+                              className="card__yoda__img__mobile"
+                            />
+                            <img
+                              src="./././images/tablet/yoda_charcard_tablet.png"
+                              alt="Yoda"
+                              className="card__yoda__img__tablet"
+                            />
+                            <img
+                              src="./././images/desktop/yoda_charcard_desktop.png"
+                              alt="Yoda"
+                              className="card__yoda__img__desktop"
+                            />
+                            <div
+                              className="card__info__yoda"
+                              key={name + Math.random}
+                            >
+                              <h1>
+                                <strong> {name}</strong>
+                              </h1>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      {name === "Anakin Skywalker" && (
+                        <div className="card__minor card__anakin">
+                          <img
+                            src="./././images/mobile/anakin_charcard_mobile.png"
+                            alt="Anakin Skywalker"
+                            className="card__anakin__img__mobile"
+                          />
+                          <img
+                            src="./././images/tablet/anakin_charcard_tablet.png"
+                            alt="Anakin Skywalker"
+                            className="card__anakin__img__tablet"
+                          />
+                          <img
+                            src="./././images/desktop/anakin_charcard_desktop.png"
+                            alt="Anakin Skywalker"
+                            className="card__anakin__img__desktop"
+                          />
+
+                          <div
+                            className="card__info__anakin"
+                            key={name + Math.random}
+                          >
+                            <h1>
+                              <strong> {name}</strong>
+                            </h1>
+                          </div>
+                        </div>
+                      )}
+                    </li>
+                  );
+                })}
+            </div>
+          )}
         </ul>
       ) : (
         <ul className="card__list">
